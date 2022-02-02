@@ -1,7 +1,7 @@
 package equipo1.ofertasLaborales.controller;
 
-import equipo1.ofertasLaborales.entities.Oferta;
-import equipo1.ofertasLaborales.entities.Tecnologia;
+import equipo1.ofertasLaborales.entities.Ofert;
+import equipo1.ofertasLaborales.entities.Technology;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,18 +35,18 @@ class TecnologiaControllerTest {
 
     @Test
     void findAll() {
-        ResponseEntity<Tecnologia[]> response = testRestTemplate.getForEntity("/api/tecnologias", Tecnologia[].class);
+        ResponseEntity<Technology[]> response = testRestTemplate.getForEntity("/api/tecnologias", Technology[].class);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(200, response.getStatusCodeValue());
 
-        List<Tecnologia> books = Arrays.asList(response.getBody());
+        List<Technology> books = Arrays.asList(response.getBody());
         System.out.println(books.size());
     }
 
     @Test
     void findById() {
-        ResponseEntity<Tecnologia> response = testRestTemplate.getForEntity("/api/tecnologias/2", Tecnologia.class);
+        ResponseEntity<Technology> response = testRestTemplate.getForEntity("/api/tecnologias/2", Technology.class);
         assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
     }
 
@@ -63,9 +63,9 @@ class TecnologiaControllerTest {
                 """;
 
         HttpEntity<String> request = new HttpEntity<>(tecnologia, headers);
-        ResponseEntity<Tecnologia> response = testRestTemplate.exchange("/api/tecnologias", HttpMethod.POST, request, Tecnologia.class);
+        ResponseEntity<Technology> response = testRestTemplate.exchange("/api/tecnologias", HttpMethod.POST, request, Technology.class);
 
-        Tecnologia result = response.getBody();
+        Technology result = response.getBody();
         assertEquals(1L, result.getId());
     }
 
@@ -75,7 +75,7 @@ class TecnologiaControllerTest {
         headers.setContentType(MediaType.APPLICATION_JSON);
         headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 
-        ResponseEntity<Tecnologia> response = testRestTemplate.getForEntity("/api/tecnologias/2", Tecnologia.class);
+        ResponseEntity<Technology> response = testRestTemplate.getForEntity("/api/tecnologias/2", Technology.class);
         String oferta = """
                  {
                       "nombre": "Spring"
@@ -83,7 +83,7 @@ class TecnologiaControllerTest {
                 """;
 
         HttpEntity<String> request = new HttpEntity<String>(headers);
-        ResponseEntity<Tecnologia> response2 =testRestTemplate.exchange("/api/tecnologias",HttpMethod.PUT,request,Tecnologia.class);
+        ResponseEntity<Technology> response2 =testRestTemplate.exchange("/api/tecnologias",HttpMethod.PUT,request, Technology.class);
         //assertEquals(HttpStatus.OK, response2.getStatusCode());
         assertEquals(HttpStatus.BAD_REQUEST, response2.getStatusCode());
     }
@@ -96,8 +96,8 @@ class TecnologiaControllerTest {
         //creamos el httpEntity para pasarlo al testresttempalte
         HttpEntity<String> httpEntity=new HttpEntity<String>(headers);
 
-        ResponseEntity<Oferta> respuesta = testRestTemplate.exchange("/api/tecnologias/1",
-                HttpMethod.DELETE,httpEntity, Oferta.class);
+        ResponseEntity<Ofert> respuesta = testRestTemplate.exchange("/api/tecnologias/1",
+                HttpMethod.DELETE,httpEntity, Ofert.class);
 
         //assertEquals(HttpStatus.NOT_FOUND,respuesta.getStatusCode());
         assertEquals(HttpStatus.NO_CONTENT,respuesta.getStatusCode());

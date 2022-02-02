@@ -11,10 +11,7 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 import java.util.Collections;
 
-/**
- * Configuración Swagger para la generación de documentación de la API REST
- * http://localhost:8082/swagger-ui/
- */
+
 @Configuration
 public class SwaggerConfig {
 
@@ -29,6 +26,6 @@ public class SwaggerConfig {
     }
 
     private ApiInfo apiDetails() {
-        return new ApiInfo("Spring Boot Book API REST", " Library Api rest docs", "1.0", "http://www.google.es", new Contact("Equipo1", "http://www.google.es", "equipo1@example.es"), "MIT", "http://www.google.es", Collections.emptyList());
+        return new ApiInfo("Spring Job Offers API REST", " Library Api rest docs", "1.0", "http://www.google.es", new Contact("Proyecto Ofertas Laborales", "http://www.google.es", "mariab.vivanco@gmail.com"), "MIT", "http://www.google.es", Collections.emptyList());
     }
 }
