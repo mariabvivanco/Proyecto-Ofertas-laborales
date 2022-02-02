@@ -1,0 +1,10 @@
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/repositories/OfertaRepository.java
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/OfertasLaboralesApplication.java
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/repositories/TecnologiaRepository.java
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/entities/Oferta.java
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/entities/Tecnologia.java
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/config/SwaggerConfig.java
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/TipoContrato.java
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/Modalidad.java
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/controller/OfertaController.java
+/Users/laiahidalgo/Desktop/openbootcamp/proyecto_Ofertas/src/main/java/equipo1/ofertasLaborales/controller/TecnologiaController.java
